@@ -166,7 +166,7 @@ namespace MessageMedia.Webhooks.Controllers
             //append request with appropriate headers and parameters
             var _headers = new Dictionary<string,string>()
             {
-                { "user-agent", "messagesmedia-webhooks" },
+                { "user-agent", "messagemedia-webhooks-csharp-sdk-1.0.0" },
                 { "accept", "application/json" },
                 { "content-type", "application/json; charset=utf-8" },
                 { "Content-Type", contentType }
@@ -345,7 +345,7 @@ namespace MessageMedia.Webhooks.Controllers
         }
 
         /// <summary>
-        /// This will update a webhook and returned the updated Webhook. 
+        /// This will update a webhook and returned the updated Webhook.
         /// you can update all the attributes individually or together.
         /// PS : the new value will override the previous one.
         /// ### Parameters
@@ -353,7 +353,7 @@ namespace MessageMedia.Webhooks.Controllers
         ///  a **Response 404 is returned when** :
         ///     <ul>
         ///      <li>there is no webhook with this `webhookId` </li>
-        ///     </ul>   
+        ///     </ul>
         ///  a **Response 400 is returned when** :
         ///     <ul>
         ///       <li>all attributes are null </li>
@@ -372,7 +372,7 @@ namespace MessageMedia.Webhooks.Controllers
         }
 
         /// <summary>
-        /// This will update a webhook and returned the updated Webhook. 
+        /// This will update a webhook and returned the updated Webhook.
         /// you can update all the attributes individually or together.
         /// PS : the new value will override the previous one.
         /// ### Parameters
@@ -380,7 +380,7 @@ namespace MessageMedia.Webhooks.Controllers
         ///  a **Response 404 is returned when** :
         ///     <ul>
         ///      <li>there is no webhook with this `webhookId` </li>
-        ///     </ul>   
+        ///     </ul>
         ///  a **Response 400 is returned when** :
         ///     <ul>
         ///       <li>all attributes are null </li>
@@ -439,4 +439,4 @@ namespace MessageMedia.Webhooks.Controllers
         }
 
     }
-} 
+}
