@@ -1,5 +1,5 @@
 # MessageMedia Webhooks C# SDK
-[![Build Status](https://travis-ci.com/messagemedia/webhooks-nodejs-sdk.svg?token=RShVNCNfErA4z78eSXc6&branch=master)](https://travis-ci.com/messagemedia/webhooks-nodejs-sdk)
+[![Build Status](https://travis-ci.com/messagemedia/webhooks-csharp-sdk.svg?token=RShVNCNfErA4z78eSXc6&branch=master)](https://travis-ci.com/messagemedia/webhooks-csharp-sdk)
 
 Webhooks allows you to subscribe to one or several events and when one of those events is triggered, an HTTP request is sent to the URL of your choice along with the message or payload. In simpler terms, it allows applications to "speak" to one another and get notified automatically when something new happens.
 
