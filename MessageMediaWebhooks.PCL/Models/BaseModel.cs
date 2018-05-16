@@ -1,8 +1,4 @@
-/*
- * MessageMediaWebhooks.PCL
- *
- * This file was automatically generated for MessageMedia by APIMATIC v2.0 ( https://apimatic.io )
- */
+
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;

@@ -157,7 +157,7 @@ namespace MessageMedia.Webhooks.Controllers
 
             //prepare query string for API call
             StringBuilder _queryBuilder = new StringBuilder(_baseUri);
-            _queryBuilder.Append("/v1/webooks/messages");
+            _queryBuilder.Append("/v1/webhooks/messages");
 
 
             //validate and preprocess url
@@ -230,7 +230,7 @@ namespace MessageMedia.Webhooks.Controllers
 
             //prepare query string for API call
             StringBuilder _queryBuilder = new StringBuilder(_baseUri);
-            _queryBuilder.Append("/v1/webooks/messages/{webhookId}");
+            _queryBuilder.Append("/v1/webhooks/messages/{webhookId}");
 
             //process optional template parameters
             APIHelper.AppendUrlWithTemplateParameters(_queryBuilder, new Dictionary<string, object>()
@@ -300,7 +300,7 @@ namespace MessageMedia.Webhooks.Controllers
 
             //prepare query string for API call
             StringBuilder _queryBuilder = new StringBuilder(_baseUri);
-            _queryBuilder.Append("/v1/webooks/messages/");
+            _queryBuilder.Append("/v1/webhooks/messages/");
 
             //process optional query parameters
             APIHelper.AppendUrlWithQueryParameters(_queryBuilder, new Dictionary<string, object>()
@@ -399,7 +399,7 @@ namespace MessageMedia.Webhooks.Controllers
 
             //prepare query string for API call
             StringBuilder _queryBuilder = new StringBuilder(_baseUri);
-            _queryBuilder.Append("/v1/webooks/messages/{webhookId}");
+            _queryBuilder.Append("/v1/webhooks/messages/{webhookId}");
 
             //process optional template parameters
             APIHelper.AppendUrlWithTemplateParameters(_queryBuilder, new Dictionary<string, object>()

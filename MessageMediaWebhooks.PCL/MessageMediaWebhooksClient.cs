@@ -1,8 +1,4 @@
-/*
- * MessageMediaWebhooks.PCL
- *
- * This file was automatically generated for MessageMedia by APIMATIC v2.0 ( https://apimatic.io )
- */
+
 using System;
 using MessageMedia.Webhooks.Controllers;
 using APIMATIC.SDK.Http.Client;
@@ -35,7 +31,7 @@ namespace MessageMedia.Webhooks
             set
             {
                 BaseController.ClientInstance = value;
-            }        
+            }
         }
         #region Constructors
         /// <summary>

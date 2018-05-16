@@ -1,8 +1,4 @@
-/*
- * MessageMediaWebhooks.PCL
- *
- * This file was automatically generated for MessageMedia by APIMATIC v2.0 ( https://apimatic.io )
- */
+
 using System;
 using System.IO;
 using System.Collections.Generic;
@@ -17,7 +13,7 @@ using APIMATIC.SDK.Common;
 
 namespace MessageMedia.Webhooks.Models
 {
-    public class RetrieveResponse : BaseModel 
+    public class RetrieveResponse : BaseModel
     {
         // These fields hold the values for the public properties.
         private int page;
@@ -28,13 +24,13 @@ namespace MessageMedia.Webhooks.Models
         /// TODO: Write general description for this method
         /// </summary>
         [JsonProperty("page")]
-        public int Page 
-        { 
-            get 
+        public int Page
+        {
+            get
             {
-                return this.page; 
-            } 
-            set 
+                return this.page;
+            }
+            set
             {
                 this.page = value;
                 onPropertyChanged("Page");
@@ -45,13 +41,13 @@ namespace MessageMedia.Webhooks.Models
         /// TODO: Write general description for this method
         /// </summary>
         [JsonProperty("pageSize")]
-        public int PageSize 
-        { 
-            get 
+        public int PageSize
+        {
+            get
             {
-                return this.pageSize; 
-            } 
-            set 
+                return this.pageSize;
+            }
+            set
             {
                 this.pageSize = value;
                 onPropertyChanged("PageSize");
@@ -62,17 +58,17 @@ namespace MessageMedia.Webhooks.Models
         /// TODO: Write general description for this method
         /// </summary>
         [JsonProperty("pageData")]
-        public object PageData 
-        { 
-            get 
+        public object PageData
+        {
+            get
             {
-                return this.pageData; 
-            } 
-            set 
+                return this.pageData;
+            }
+            set
             {
                 this.pageData = value;
                 onPropertyChanged("PageData");
             }
         }
     }
-} 
+}

@@ -1,8 +1,4 @@
-/*
- * MessageMediaWebhooks.Tests
- *
- * This file was automatically generated for MessageMedia by APIMATIC v2.0 ( https://apimatic.io )
- */
+
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -76,7 +72,7 @@ namespace MessageMedia.Webhooks.Helpers
                 }
                 else
                 {
-                    // Value comparison if checkValues 
+                    // Value comparison if checkValues
                     if (checkValues)
                     {
                         // If left value is a primitive, check if it equals right value

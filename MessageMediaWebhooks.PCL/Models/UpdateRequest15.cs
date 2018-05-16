@@ -1,8 +1,4 @@
-/*
- * MessageMediaWebhooks.PCL
- *
- * This file was automatically generated for MessageMedia by APIMATIC v2.0 ( https://apimatic.io )
- */
+
 using System;
 using System.IO;
 using System.Collections.Generic;
@@ -17,7 +13,7 @@ using APIMATIC.SDK.Common;
 
 namespace MessageMedia.Webhooks.Models
 {
-    public class UpdateRequest15 : BaseModel 
+    public class UpdateRequest15 : BaseModel
     {
         // These fields hold the values for the public properties.
         private string url;
@@ -27,13 +23,13 @@ namespace MessageMedia.Webhooks.Models
         /// target for the webhook. http and https are authorized
         /// </summary>
         [JsonProperty("url")]
-        public string Url 
-        { 
-            get 
+        public string Url
+        {
+            get
             {
-                return this.url; 
-            } 
-            set 
+                return this.url;
+            }
+            set
             {
                 this.url = value;
                 onPropertyChanged("Url");
@@ -44,17 +40,17 @@ namespace MessageMedia.Webhooks.Models
         /// expected template. see doc for possibilitie
         /// </summary>
         [JsonProperty("template")]
-        public string Template 
-        { 
-            get 
+        public string Template
+        {
+            get
             {
-                return this.template; 
-            } 
-            set 
+                return this.template;
+            }
+            set
             {
                 this.template = value;
                 onPropertyChanged("Template");
             }
         }
     }
-} 
+}

@@ -1,15 +1,11 @@
-/*
- * MessageMediaWebhooks.Tests
- *
- * This file was automatically generated for MessageMedia by APIMATIC v2.0 ( https://apimatic.io )
- */
+
 using System;
 using System.Collections.Generic;
 using System.Globalization;
 using System.IO;
 using System.Threading.Tasks;
 using Newtonsoft.Json.Converters;
-using APIMATIC.SDK.Common; 
+using APIMATIC.SDK.Common;
 using APIMATIC.SDK.Http.Client;
 using APIMATIC.SDK.Http.Response;
 using MessageMedia.Webhooks.Helpers;
@@ -41,10 +37,10 @@ namespace MessageMedia.Webhooks
         ///a **Response 404 is returned when** :
         ///    <ul>
         ///     <li>there is no webhook  with this `webhookId` </li>
-        ///    </ul> 
+        ///    </ul>
         /// </summary>
         [Test]
-        public async Task TestDeleteDeleteAndUpdateWebhook1() 
+        public async Task TestDeleteDeleteAndUpdateWebhook1()
         {
             // Parameters for the API call
             Guid webhookId = Guid.Parse("a7f11bb0-f299-4861-a5ca-9b29d04bc5ad");
@@ -77,10 +73,10 @@ namespace MessageMedia.Webhooks
         ///    <ul>
         ///     <li>the `page` query parameter is not valid </li>
         ///     <li>the `pageSize` query parameter is not valid </li>
-        ///    </ul> 
+        ///    </ul>
         /// </summary>
         [Test]
-        public async Task TestRetrieve1() 
+        public async Task TestRetrieve1()
         {
             // Parameters for the API call
             int? page = '1';
@@ -111,8 +107,8 @@ namespace MessageMedia.Webhooks
             Assert.IsNotNull(result, "Result should exist");
 
             Assert.IsTrue(TestHelper.IsJsonObjectProperSubsetOf(
-                    "    {    \"page\": 0,    \"pageSize\": 100,    \"pageData\": [{    \"id\": \"6e2c61df-d30a-4555-82a5-0e79822d8f53\",    \"url\": \"http://myurl.com\",    \"method\": \"POST\",    \"encoding\": \"FORM_ENCODED\",    \"headers\": {    \"Account\": \"FunGuys\"    },    \"template\": \"id=$mtId&status=$statusCode\",    \"events\": [    \"ENROUTE_DR\",    \"DELIVERED_DR\"    ]    }, {    \"id\": \"6e2c61df-d30a-4555-82a5-0e79822d8f53\",    \"url\": \"http://myurl.com\",    \"method\": \"POST\",    \"encoding\": \"XML\",    \"headers\": {    \"Account\": \"FunGuys\"    },    \"template\": \"<content><id> $mtId < /id> <status > $statusCode < /status> </content>\",    \"events\": [    \"ENROUTE_DR\",    \"DELIVERED_DR\"    ]    }]    }", 
-                    TestHelper.ConvertStreamToString(httpCallBackHandler.Response.RawBody), 
+                    "    {    \"page\": 0,    \"pageSize\": 100,    \"pageData\": [{    \"id\": \"6e2c61df-d30a-4555-82a5-0e79822d8f53\",    \"url\": \"http://myurl.com\",    \"method\": \"POST\",    \"encoding\": \"FORM_ENCODED\",    \"headers\": {    \"Account\": \"FunGuys\"    },    \"template\": \"id=$mtId&status=$statusCode\",    \"events\": [    \"ENROUTE_DR\",    \"DELIVERED_DR\"    ]    }, {    \"id\": \"6e2c61df-d30a-4555-82a5-0e79822d8f53\",    \"url\": \"http://myurl.com\",    \"method\": \"POST\",    \"encoding\": \"XML\",    \"headers\": {    \"Account\": \"FunGuys\"    },    \"template\": \"<content><id> $mtId < /id> <status > $statusCode < /status> </content>\",    \"events\": [    \"ENROUTE_DR\",    \"DELIVERED_DR\"    ]    }]    }",
+                    TestHelper.ConvertStreamToString(httpCallBackHandler.Response.RawBody),
                     true, true, false),
                     "Response body should have matching keys");
         }

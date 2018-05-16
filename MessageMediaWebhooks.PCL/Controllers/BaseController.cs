@@ -1,8 +1,4 @@
-/*
- * MessageMediaWebhooks.PCL
- *
- * This file was automatically generated for MessageMedia by APIMATIC v2.0 ( https://apimatic.io )
- */
+
 using System;
 using APIMATIC.SDK.Common;
 using APIMATIC.SDK.Http.Client;
@@ -57,4 +53,4 @@ namespace MessageMedia.Webhooks.Controllers
                 throw new APIException(@"HTTP Response Not OK", _context);
         }
     }
-} 
+}

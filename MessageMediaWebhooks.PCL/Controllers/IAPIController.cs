@@ -1,8 +1,4 @@
-/*
- * MessageMediaWebhooks.PCL
- *
- * This file was automatically generated for MessageMedia by APIMATIC v2.0 ( https://apimatic.io )
- */
+
 using System;
 using System.Collections.Generic;
 using System.Dynamic;
@@ -168,7 +164,7 @@ namespace MessageMedia.Webhooks.Controllers
         Task<Models.RetrieveResponse> RetrieveAsync(int? page = null, int? pageSize = null);
 
         /// <summary>
-        /// This will update a webhook and returned the updated Webhook. 
+        /// This will update a webhook and returned the updated Webhook.
         /// you can update all the attributes individually or together.
         /// PS : the new value will override the previous one.
         /// ### Parameters
@@ -176,7 +172,7 @@ namespace MessageMedia.Webhooks.Controllers
         ///  a **Response 404 is returned when** :
         ///     <ul>
         ///      <li>there is no webhook with this `webhookId` </li>
-        ///     </ul>   
+        ///     </ul>
         ///  a **Response 400 is returned when** :
         ///     <ul>
         ///       <li>all attributes are null </li>
@@ -191,7 +187,7 @@ namespace MessageMedia.Webhooks.Controllers
         void Update(Guid webhookId, string contentType, Models.UpdateRequest body);
 
         /// <summary>
-        /// This will update a webhook and returned the updated Webhook. 
+        /// This will update a webhook and returned the updated Webhook.
         /// you can update all the attributes individually or together.
         /// PS : the new value will override the previous one.
         /// ### Parameters
@@ -199,7 +195,7 @@ namespace MessageMedia.Webhooks.Controllers
         ///  a **Response 404 is returned when** :
         ///     <ul>
         ///      <li>there is no webhook with this `webhookId` </li>
-        ///     </ul>   
+        ///     </ul>
         ///  a **Response 400 is returned when** :
         ///     <ul>
         ///       <li>all attributes are null </li>
@@ -214,4 +210,4 @@ namespace MessageMedia.Webhooks.Controllers
         Task UpdateAsync(Guid webhookId, string contentType, Models.UpdateRequest body);
 
     }
-} 
+}
