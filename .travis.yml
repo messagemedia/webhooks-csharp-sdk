@@ -1,9 +1,0 @@
-language: csharp
-solution: MessageMediaWebhooks.sln
-install:
-  - nuget restore MessageMediaWebhooks.sln
-  - nuget install NUnit.Runners -Version 3.2.1 -OutputDirectory testrunner
-script:
-  - msbuild /t:restore /p:Configuration=Release MessageMediaWebhooks.sln
-  - msbuild /p:Configuration=Release MessageMediaWebhooks.sln
-  - mono ./testrunner/NUnit.ConsoleRunner.3.2.1/tools/nunit3-console.exe ./MessageMediaWebhooks.Tests/bin/Release/MessageMediaWebhooks.Tests.dll

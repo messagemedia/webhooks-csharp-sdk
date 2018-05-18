@@ -1,13 +1,18 @@
-
+/*
+ * MessageMediaWebhooks.Tests
+ *
+ * This file was automatically generated for MessageMedia by APIMATIC v2.0 ( https://apimatic.io )
+ */
 using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.IO;
 using System.Text;
-using APIMATIC.SDK.Common;
-using APIMATIC.SDK.Http.Client;
-using APIMATIC.SDK.Http.Request;
-using APIMATIC.SDK.Http.Response;
+using MessageMedia.Webhooks;
+using MessageMedia.Webhooks.Utilities;
+using MessageMedia.Webhooks.Http.Client;
+using MessageMedia.Webhooks.Http.Request;
+using MessageMedia.Webhooks.Http.Response;
 using System.Security.Cryptography;
 using Newtonsoft.Json.Linq;
 
@@ -72,7 +77,7 @@ namespace MessageMedia.Webhooks.Helpers
                 }
                 else
                 {
-                    // Value comparison if checkValues
+                    // Value comparison if checkValues 
                     if (checkValues)
                     {
                         // If left value is a primitive, check if it equals right value

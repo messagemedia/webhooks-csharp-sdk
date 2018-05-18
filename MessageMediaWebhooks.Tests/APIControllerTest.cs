@@ -1,17 +1,23 @@
-
+/*
+ * MessageMediaWebhooks.Tests
+ *
+ * This file was automatically generated for MessageMedia by APIMATIC v2.0 ( https://apimatic.io )
+ */
 using System;
 using System.Collections.Generic;
 using System.Globalization;
 using System.IO;
 using System.Threading.Tasks;
 using Newtonsoft.Json.Converters;
-using APIMATIC.SDK.Common;
-using APIMATIC.SDK.Http.Client;
-using APIMATIC.SDK.Http.Response;
+using MessageMedia.Webhooks;
+using MessageMedia.Webhooks.Utilities; 
+using MessageMedia.Webhooks.Http.Client;
+using MessageMedia.Webhooks.Http.Response;
 using MessageMedia.Webhooks.Helpers;
 using NUnit.Framework;
 using MessageMedia.Webhooks;
 using MessageMedia.Webhooks.Controllers;
+using MessageMedia.Webhooks.Exceptions;
 
 namespace MessageMedia.Webhooks
 {
@@ -21,7 +27,7 @@ namespace MessageMedia.Webhooks
         /// <summary>
         /// Controller instance (for all tests)
         /// </summary>
-        private static IAPIController controller;
+        private static APIController controller;
 
         /// <summary>
         /// Setup test class
@@ -33,14 +39,12 @@ namespace MessageMedia.Webhooks
         }
 
         /// <summary>
-        /// This will delete the webhook wuth the give id.
-        ///a **Response 404 is returned when** :
-        ///    <ul>
-        ///     <li>there is no webhook  with this `webhookId` </li>
-        ///    </ul>
+        /// Delete a webhook that was previously created for the connected account.
+        ///A webhook can be cancelled by appending the UUID of the webhook to the endpoint and submitting a DELETE request to the /webhooks/messages endpoint.
+        ///*Note: Only pre-created webhooks can be deleted. If an invalid or non existent webhook ID parameter is specified in the request, then a HTTP 404 Not Found response will be returned.* 
         /// </summary>
         [Test]
-        public async Task TestDeleteDeleteAndUpdateWebhook1()
+        public async Task TestDeleteWebhook1() 
         {
             // Parameters for the API call
             Guid webhookId = Guid.Parse("a7f11bb0-f299-4861-a5ca-9b29d04bc5ad");
@@ -49,7 +53,7 @@ namespace MessageMedia.Webhooks
 
             try
             {
-                await controller.DeleteDeleteAndUpdateWebhookAsync(webhookId);
+                await controller.DeleteWebhookAsync(webhookId);
             }
             catch(APIException) {};
 
@@ -57,37 +61,39 @@ namespace MessageMedia.Webhooks
             Assert.AreEqual(204, httpCallBackHandler.Response.StatusCode,
                     "Status should be 204");
 
-            // Test headers
-            Dictionary<string, string> headers = new Dictionary<string, string>();
-            headers.Add("Content-Type", null);
-
-            Assert.IsTrue(TestHelper.AreHeadersProperSubsetOf (
-                    headers, httpCallBackHandler.Response.Headers),
-                    "Headers should match");
-
         }
 
         /// <summary>
-        /// This will retrieve all webhooks for the account we're connected with.
-        ///a **Response 400 is returned when** :
-        ///    <ul>
-        ///     <li>the `page` query parameter is not valid </li>
-        ///     <li>the `pageSize` query parameter is not valid </li>
-        ///    </ul>
+        /// Update a webhook. You can update all the attributes individually or together by submitting a PATCH request to the /webhooks/messages endpoint (the same endpoint used above to delete a webhook)
+        ///A successful request to the retrieve webhook endpoint will return a response body as follows:
+        ///```
+        ///{
+        ///    "url": "https://webhook.com",
+        ///    "method": "POST",
+        ///    "id": "04442623-0961-464e-9cbc-ec50804e0413",
+        ///    "encoding": "JSON",
+        ///    "events": [
+        ///        "RECEIVED_SMS"
+        ///    ],
+        ///    "headers": {},
+        ///    "template": "{\"id\":\"$mtId\", \"status\":\"$statusCode\"}"
+        ///}
+        ///```
+        ///*Note: Only pre-created webhooks can be deleted. If an invalid or non existent webhook ID parameter is specified in the request, then a HTTP 404 Not Found response will be returned.* 
         /// </summary>
         [Test]
-        public async Task TestRetrieve1()
+        public async Task TestUpdateWebhook1() 
         {
             // Parameters for the API call
-            int? page = '1';
-            int? pageSize = '10';
+            Guid webhookId = Guid.Parse("a7f11bb0-f299-4861-a5ca-9b29d04bc5ad");
+            Webhooks.Models.UpdateWebhookRequest body = APIHelper.JsonDeserialize<Webhooks.Models.UpdateWebhookRequest>("    {        \"url\": \"https://myurl.com\",        \"method\": \"POST\",        \"encoding\": \"FORM_ENCODED\",        \"events\": [            \"ENROUTE_DR\"        ],        \"template\": \"{\\\"id\\\":\\\"$mtId\\\", \\\"status\\\":\\\"$statusCode\\\"}\"    }");
 
             // Perform API call
-            Webhooks.Models.RetrieveResponse result = null;
+            dynamic result = null;
 
             try
             {
-                result = await controller.RetrieveAsync(page, pageSize);
+                result = await controller.UpdateWebhookAsync(webhookId, body);
             }
             catch(APIException) {};
 
@@ -95,22 +101,6 @@ namespace MessageMedia.Webhooks
             Assert.AreEqual(200, httpCallBackHandler.Response.StatusCode,
                     "Status should be 200");
 
-            // Test headers
-            Dictionary<string, string> headers = new Dictionary<string, string>();
-            headers.Add("Content-Type", null);
-
-            Assert.IsTrue(TestHelper.AreHeadersProperSubsetOf (
-                    headers, httpCallBackHandler.Response.Headers),
-                    "Headers should match");
-
-            // Test whether the captured response is as we expected
-            Assert.IsNotNull(result, "Result should exist");
-
-            Assert.IsTrue(TestHelper.IsJsonObjectProperSubsetOf(
-                    "    {    \"page\": 0,    \"pageSize\": 100,    \"pageData\": [{    \"id\": \"6e2c61df-d30a-4555-82a5-0e79822d8f53\",    \"url\": \"http://myurl.com\",    \"method\": \"POST\",    \"encoding\": \"FORM_ENCODED\",    \"headers\": {    \"Account\": \"FunGuys\"    },    \"template\": \"id=$mtId&status=$statusCode\",    \"events\": [    \"ENROUTE_DR\",    \"DELIVERED_DR\"    ]    }, {    \"id\": \"6e2c61df-d30a-4555-82a5-0e79822d8f53\",    \"url\": \"http://myurl.com\",    \"method\": \"POST\",    \"encoding\": \"XML\",    \"headers\": {    \"Account\": \"FunGuys\"    },    \"template\": \"<content><id> $mtId < /id> <status > $statusCode < /status> </content>\",    \"events\": [    \"ENROUTE_DR\",    \"DELIVERED_DR\"    ]    }]    }",
-                    TestHelper.ConvertStreamToString(httpCallBackHandler.Response.RawBody),
-                    true, true, false),
-                    "Response body should have matching keys");
         }
 
     }

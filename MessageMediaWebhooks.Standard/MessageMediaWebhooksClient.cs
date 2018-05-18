@@ -1,18 +1,22 @@
-
+/*
+ * MessageMediaWebhooks.Standard
+ *
+ * This file was automatically generated for MessageMedia by APIMATIC v2.0 ( https://apimatic.io )
+ */
 using System;
 using MessageMedia.Webhooks.Controllers;
-using APIMATIC.SDK.Http.Client;
-using APIMATIC.SDK.Common;
+using MessageMedia.Webhooks.Http.Client;
+using MessageMedia.Webhooks.Utilities;
 
 namespace MessageMedia.Webhooks
 {
-    public partial class MessageMediaWebhooksClient: IMessageMediaWebhooksClient
+    public partial class MessageMediaWebhooksClient
     {
 
         /// <summary>
         /// Singleton access to Client controller
         /// </summary>
-        public IAPIController Client
+        public APIController Client
         {
             get
             {
@@ -31,7 +35,7 @@ namespace MessageMedia.Webhooks
             set
             {
                 BaseController.ClientInstance = value;
-            }
+            }        
         }
         #region Constructors
         /// <summary>
