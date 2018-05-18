@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using NUnit.Framework;
 using MessageMedia.Webhooks;
 using MessageMedia.Webhooks.Helpers;
-
+ 
 using MessageMedia.Webhooks.Models;
 
 namespace MessageMedia.Webhooks
@@ -43,8 +43,6 @@ namespace MessageMedia.Webhooks
             {
                 if (client == null)
                 {
-                    Configuration.BasicAuthUserName = Environment.GetEnvironmentVariable("MessageMediaApiTestsKey");
-				            Configuration.BasicAuthPassword = Environment.GetEnvironmentVariable("MessageMediaApiTestsSecret");
                     client = new MessageMediaWebhooksClient();
                 }
                 return client;

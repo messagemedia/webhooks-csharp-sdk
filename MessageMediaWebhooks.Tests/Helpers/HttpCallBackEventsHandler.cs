@@ -1,7 +1,11 @@
-
-using APIMATIC.SDK.Http.Client;
-using APIMATIC.SDK.Http.Request;
-using APIMATIC.SDK.Http.Response;
+/*
+ * MessageMediaWebhooks.Tests
+ *
+ * This file was automatically generated for MessageMedia by APIMATIC v2.0 ( https://apimatic.io )
+ */
+using MessageMedia.Webhooks.Http.Client;
+using MessageMedia.Webhooks.Http.Request;
+using MessageMedia.Webhooks.Http.Response;
 
 namespace MessageMedia.Webhooks.Helpers
 {
