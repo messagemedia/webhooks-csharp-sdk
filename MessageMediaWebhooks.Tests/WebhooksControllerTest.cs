@@ -9,10 +9,9 @@ using System.Globalization;
 using System.IO;
 using System.Threading.Tasks;
 using Newtonsoft.Json.Converters;
-using MessageMedia.Webhooks;
-using MessageMedia.Webhooks.Utilities; 
-using MessageMedia.Webhooks.Http.Client;
-using MessageMedia.Webhooks.Http.Response;
+using APIMATIC.SDK.Common; 
+using APIMATIC.SDK.Http.Client;
+using APIMATIC.SDK.Http.Response;
 using MessageMedia.Webhooks.Helpers;
 using NUnit.Framework;
 using MessageMedia.Webhooks;
@@ -22,12 +21,12 @@ using MessageMedia.Webhooks.Exceptions;
 namespace MessageMedia.Webhooks
 {
     [TestFixture]
-    public class APIControllerTest : ControllerTestBase
+    public class WebhooksControllerTest : ControllerTestBase
     {
         /// <summary>
         /// Controller instance (for all tests)
         /// </summary>
-        private static APIController controller;
+        private static IWebhooksController controller;
 
         /// <summary>
         /// Setup test class
@@ -35,7 +34,7 @@ namespace MessageMedia.Webhooks
         [SetUp]
         public static void SetUpClass()
         {
-            controller = GetClient().Client;
+            controller = GetClient().Webhooks;
         }
 
         /// <summary>
@@ -61,10 +60,13 @@ namespace MessageMedia.Webhooks
             Assert.AreEqual(204, httpCallBackHandler.Response.StatusCode,
                     "Status should be 204");
 
+            Assert.AreEqual(
+                    headers.Count, httpCallBackHandler.Response.Headers().Count,
+                    "Headers count should match exactly");
         }
 
         /// <summary>
-        /// Update a webhook. You can update all the attributes individually or together by submitting a PATCH request to the /webhooks/messages endpoint (the same endpoint used above to delete a webhook)
+        /// Update a webhook. You can update individual attributes or all of them by submitting a PATCH request to the /webhooks/messages endpoint (the same endpoint used above to delete a webhook)
         ///A successful request to the retrieve webhook endpoint will return a response body as follows:
         ///```
         ///{
@@ -101,6 +103,9 @@ namespace MessageMedia.Webhooks
             Assert.AreEqual(200, httpCallBackHandler.Response.StatusCode,
                     "Status should be 200");
 
+            Assert.AreEqual(
+                    headers.Count, httpCallBackHandler.Response.Headers().Count,
+                    "Headers count should match exactly");
         }
 
     }

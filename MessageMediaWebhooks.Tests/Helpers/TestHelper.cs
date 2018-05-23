@@ -8,11 +8,10 @@ using System.Collections;
 using System.Collections.Generic;
 using System.IO;
 using System.Text;
-using MessageMedia.Webhooks;
-using MessageMedia.Webhooks.Utilities;
-using MessageMedia.Webhooks.Http.Client;
-using MessageMedia.Webhooks.Http.Request;
-using MessageMedia.Webhooks.Http.Response;
+using APIMATIC.SDK.Common;
+using APIMATIC.SDK.Http.Client;
+using APIMATIC.SDK.Http.Request;
+using APIMATIC.SDK.Http.Response;
 using System.Security.Cryptography;
 using Newtonsoft.Json.Linq;
 
