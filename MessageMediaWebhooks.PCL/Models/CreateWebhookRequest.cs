@@ -1,5 +1,5 @@
 /*
- * MessageMediaWebhooks.Standard
+ * MessageMediaWebhooks.PCL
  *
  * This file was automatically generated for MessageMedia by APIMATIC v2.0 ( https://apimatic.io )
  */
@@ -12,18 +12,18 @@ using System.Text;
 using System.Threading.Tasks;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
-using MessageMedia.Webhooks;
-using MessageMedia.Webhooks.Utilities;
+using APIMATIC.SDK.Common;
 
 
 namespace MessageMedia.Webhooks.Models
 {
-    public class UpdateWebhookRequest : BaseModel 
+    public class CreateWebhookRequest : BaseModel 
     {
         // These fields hold the values for the public properties.
         private string url;
         private string method;
         private string encoding;
+        private object headers;
         private List<string> events;
         private string template;
 
@@ -75,6 +75,23 @@ namespace MessageMedia.Webhooks.Models
             {
                 this.encoding = value;
                 onPropertyChanged("Encoding");
+            }
+        }
+
+        /// <summary>
+        /// TODO: Write general description for this method
+        /// </summary>
+        [JsonProperty("headers")]
+        public object Headers 
+        { 
+            get 
+            {
+                return this.headers; 
+            } 
+            set 
+            {
+                this.headers = value;
+                onPropertyChanged("Headers");
             }
         }
 

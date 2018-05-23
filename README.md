@@ -8,7 +8,6 @@ The generated code uses the Newtonsoft Json.NET NuGet Package. If the automatic 
 is enabled, these dependencies will be installed automatically. Therefore,
 you will need internet access for build.
 
-"This library requires Visual Studio 2017 for compilation."
 1. Open the solution (MessageMediaWebhooks.sln) file.
 2. Invoke the build process using `Ctrl+Shift+B` shortcut key or using the `Build` menu as shown below.
 
@@ -89,19 +88,19 @@ MessageMediaWebhooksClient client = new MessageMediaWebhooksClient(basicAuthUser
 
 ## <a name="list_of_controllers"></a>List of Controllers
 
-* [APIController](#api_controller)
+* [WebhooksController](#webhooks_controller)
 
-## <a name="api_controller"></a>![Class: ](https://apidocs.io/img/class.png "MessageMedia.Webhooks.Controllers.APIController") APIController
+## <a name="webhooks_controller"></a>![Class: ](https://apidocs.io/img/class.png "MessageMedia.Webhooks.Controllers.WebhooksController") WebhooksController
 
 ### Get singleton instance
 
-The singleton instance of the ``` APIController ``` class can be accessed from the API Client.
+The singleton instance of the ``` WebhooksController ``` class can be accessed from the API Client.
 
 ```csharp
-APIController client = client.Client;
+IWebhooksController webhooks = client.Webhooks;
 ```
 
-### <a name="create_webhook"></a>![Method: ](https://apidocs.io/img/method.png "MessageMedia.Webhooks.Controllers.APIController.CreateWebhook") CreateWebhook
+### <a name="create_webhook"></a>![Method: ](https://apidocs.io/img/method.png "MessageMedia.Webhooks.Controllers.WebhooksController.CreateWebhook") CreateWebhook
 
 > Create a webhook for one or more of the specified events.
 > A webhook would typically have the following structure:
@@ -181,7 +180,7 @@ Task<dynamic> CreateWebhook(Webhooks.Models.CreateWebhookRequest body)
 ```csharp
 var body = new Webhooks.Models.CreateWebhookRequest();
 
-dynamic result = await client.CreateWebhook(body);
+dynamic result = await webhooks.CreateWebhook(body);
 
 ```
 
@@ -193,7 +192,7 @@ dynamic result = await client.CreateWebhook(body);
 | 409 | Unexpected error in API call. See HTTP response body for details. |
 
 
-### <a name="retrieve_webhook"></a>![Method: ](https://apidocs.io/img/method.png "MessageMedia.Webhooks.Controllers.APIController.RetrieveWebhook") RetrieveWebhook
+### <a name="retrieve_webhook"></a>![Method: ](https://apidocs.io/img/method.png "MessageMedia.Webhooks.Controllers.WebhooksController.RetrieveWebhook") RetrieveWebhook
 
 > Retrieve all the webhooks created for the connected account.
 > A successful request to the retrieve webhook endpoint will return a response body as follows:
@@ -220,7 +219,7 @@ dynamic result = await client.CreateWebhook(body);
 
 
 ```csharp
-Task<dynamic> RetrieveWebhook(string page = null, string pageSize = null)
+Task<dynamic> RetrieveWebhook(int? page = null, int? pageSize = null)
 ```
 
 #### Parameters
@@ -234,10 +233,10 @@ Task<dynamic> RetrieveWebhook(string page = null, string pageSize = null)
 #### Example Usage
 
 ```csharp
-string page = "page";
-string pageSize = "pageSize";
+int? page = 5;
+int? pageSize = 5;
 
-dynamic result = await client.RetrieveWebhook(page, pageSize);
+dynamic result = await webhooks.RetrieveWebhook(page, pageSize);
 
 ```
 
@@ -248,7 +247,7 @@ dynamic result = await client.RetrieveWebhook(page, pageSize);
 | 400 | Unexpected error in API call. See HTTP response body for details. |
 
 
-### <a name="delete_webhook"></a>![Method: ](https://apidocs.io/img/method.png "MessageMedia.Webhooks.Controllers.APIController.DeleteWebhook") DeleteWebhook
+### <a name="delete_webhook"></a>![Method: ](https://apidocs.io/img/method.png "MessageMedia.Webhooks.Controllers.WebhooksController.DeleteWebhook") DeleteWebhook
 
 > Delete a webhook that was previously created for the connected account.
 > A webhook can be cancelled by appending the UUID of the webhook to the endpoint and submitting a DELETE request to the /webhooks/messages endpoint.
@@ -271,7 +270,7 @@ Task DeleteWebhook(Guid webhookId)
 ```csharp
 Guid webhookId = a7f11bb0-f299-4861-a5ca-9b29d04bc5ad;
 
-await client.DeleteWebhook(webhookId);
+await webhooks.DeleteWebhook(webhookId);
 
 ```
 
@@ -282,9 +281,9 @@ await client.DeleteWebhook(webhookId);
 | 404 | TODO: Add an error description |
 
 
-### <a name="update_webhook"></a>![Method: ](https://apidocs.io/img/method.png "MessageMedia.Webhooks.Controllers.APIController.UpdateWebhook") UpdateWebhook
+### <a name="update_webhook"></a>![Method: ](https://apidocs.io/img/method.png "MessageMedia.Webhooks.Controllers.WebhooksController.UpdateWebhook") UpdateWebhook
 
-> Update a webhook. You can update all the attributes individually or together by submitting a PATCH request to the /webhooks/messages endpoint (the same endpoint used above to delete a webhook)
+> Update a webhook. You can update individual attributes or all of them by submitting a PATCH request to the /webhooks/messages endpoint (the same endpoint used above to delete a webhook)
 > A successful request to the retrieve webhook endpoint will return a response body as follows:
 > ```
 > {
@@ -321,7 +320,7 @@ Guid webhookId = a7f11bb0-f299-4861-a5ca-9b29d04bc5ad;
 string bodyValue = "    {        \"url\": \"https://myurl.com\",        \"method\": \"POST\",        \"encoding\": \"FORM_ENCODED\",        \"events\": [            \"ENROUTE_DR\"        ],        \"template\": \"{\\\"id\\\":\\\"$mtId\\\", \\\"status\\\":\\\"$statusCode\\\"}\"    }";
 var body = Newtonsoft.Json.JsonConvert.DeserializeObject<Webhooks.Models.UpdateWebhookRequest>(bodyValue);
 
-dynamic result = await client.UpdateWebhook(webhookId, body);
+dynamic result = await webhooks.UpdateWebhook(webhookId, body);
 
 ```
 

@@ -1,5 +1,5 @@
 /*
- * MessageMediaWebhooks.Standard
+ * MessageMediaWebhooks.PCL
  *
  * This file was automatically generated for MessageMedia by APIMATIC v2.0 ( https://apimatic.io )
  */
@@ -12,27 +12,26 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Newtonsoft.Json.Converters;
-using MessageMedia.Webhooks;
-using MessageMedia.Webhooks.Utilities;
-using MessageMedia.Webhooks.Http.Request;
-using MessageMedia.Webhooks.Http.Response;
-using MessageMedia.Webhooks.Http.Client;
+using APIMATIC.SDK.Common;
+using APIMATIC.SDK.Http.Request;
+using APIMATIC.SDK.Http.Response;
+using APIMATIC.SDK.Http.Client;
 using MessageMedia.Webhooks.Exceptions;
 
 namespace MessageMedia.Webhooks.Controllers
 {
-    public partial class APIController: BaseController
+    public partial class WebhooksController: BaseController, IWebhooksController
     {
         #region Singleton Pattern
 
         //private static variables for the singleton pattern
         private static object syncObject = new object();
-        private static APIController instance = null;
+        private static WebhooksController instance = null;
 
         /// <summary>
         /// Singleton pattern implementation
         /// </summary>
-        internal static APIController Instance
+        internal static WebhooksController Instance
         {
             get
             {
@@ -40,7 +39,7 @@ namespace MessageMedia.Webhooks.Controllers
                 {
                     if (null == instance)
                     {
-                        instance = new APIController();
+                        instance = new WebhooksController();
                     }
                 }
                 return instance;
@@ -262,7 +261,7 @@ namespace MessageMedia.Webhooks.Controllers
         /// <param name="page">Optional parameter: Example: </param>
         /// <param name="pageSize">Optional parameter: Example: </param>
         /// <return>Returns the dynamic response from the API call</return>
-        public dynamic RetrieveWebhook(string page = null, string pageSize = null)
+        public dynamic RetrieveWebhook(int? page = null, int? pageSize = null)
         {
             Task<dynamic> t = RetrieveWebhookAsync(page, pageSize);
             APIHelper.RunTaskSynchronously(t);
@@ -296,7 +295,7 @@ namespace MessageMedia.Webhooks.Controllers
         /// <param name="page">Optional parameter: Example: </param>
         /// <param name="pageSize">Optional parameter: Example: </param>
         /// <return>Returns the dynamic response from the API call</return>
-        public async Task<dynamic> RetrieveWebhookAsync(string page = null, string pageSize = null)
+        public async Task<dynamic> RetrieveWebhookAsync(int? page = null, int? pageSize = null)
         {
             //the base uri for api requests
             string _baseUri = Configuration.BaseUri;
@@ -409,7 +408,7 @@ namespace MessageMedia.Webhooks.Controllers
         }
 
         /// <summary>
-        /// Update a webhook. You can update all the attributes individually or together by submitting a PATCH request to the /webhooks/messages endpoint (the same endpoint used above to delete a webhook)
+        /// Update a webhook. You can update individual attributes or all of them by submitting a PATCH request to the /webhooks/messages endpoint (the same endpoint used above to delete a webhook)
         /// A successful request to the retrieve webhook endpoint will return a response body as follows:
         /// ```
         /// {
@@ -437,7 +436,7 @@ namespace MessageMedia.Webhooks.Controllers
         }
 
         /// <summary>
-        /// Update a webhook. You can update all the attributes individually or together by submitting a PATCH request to the /webhooks/messages endpoint (the same endpoint used above to delete a webhook)
+        /// Update a webhook. You can update individual attributes or all of them by submitting a PATCH request to the /webhooks/messages endpoint (the same endpoint used above to delete a webhook)
         /// A successful request to the retrieve webhook endpoint will return a response body as follows:
         /// ```
         /// {

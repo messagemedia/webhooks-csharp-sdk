@@ -1,26 +1,26 @@
 /*
- * MessageMediaWebhooks.Standard
+ * MessageMediaWebhooks.PCL
  *
  * This file was automatically generated for MessageMedia by APIMATIC v2.0 ( https://apimatic.io )
  */
 using System;
 using MessageMedia.Webhooks.Controllers;
-using MessageMedia.Webhooks.Http.Client;
-using MessageMedia.Webhooks.Utilities;
+using APIMATIC.SDK.Http.Client;
+using APIMATIC.SDK.Common;
 
 namespace MessageMedia.Webhooks
 {
-    public partial class MessageMediaWebhooksClient
+    public partial class MessageMediaWebhooksClient: IMessageMediaWebhooksClient
     {
 
         /// <summary>
-        /// Singleton access to Client controller
+        /// Singleton access to Webhooks controller
         /// </summary>
-        public APIController Client
+        public IWebhooksController Webhooks
         {
             get
             {
-                return APIController.Instance;
+                return WebhooksController.Instance;
             }
         }
         /// <summary>

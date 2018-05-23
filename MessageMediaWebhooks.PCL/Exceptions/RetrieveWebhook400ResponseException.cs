@@ -1,5 +1,5 @@
 /*
- * MessageMediaWebhooks.Standard
+ * MessageMediaWebhooks.PCL
  *
  * This file was automatically generated for MessageMedia by APIMATIC v2.0 ( https://apimatic.io )
  */
@@ -12,16 +12,15 @@ using System.Text;
 using System.Threading.Tasks;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
-using MessageMedia.Webhooks.Http.Client;
+using APIMATIC.SDK.Http.Client;
 
 using MessageMedia.Webhooks.Models;
-using MessageMedia.Webhooks;
-using MessageMedia.Webhooks.Utilities;
+using APIMATIC.SDK.Common;
 
 
 namespace MessageMedia.Webhooks.Exceptions
 {
-    public class CreateWebhook400ResponseException : APIException 
+    public class RetrieveWebhook400ResponseException : APIException 
     {
         // These fields hold the values for the public properties.
         private string message;
@@ -47,7 +46,7 @@ namespace MessageMedia.Webhooks.Exceptions
         /// </summary>
         /// <param name="reason"> The reason for throwing exception </param>
         /// <param name="context"> The HTTP context that encapsulates request and response objects </param>
-        public CreateWebhook400ResponseException(string reason, HttpContext context)
+        public RetrieveWebhook400ResponseException(string reason, HttpContext context)
             : base(reason, context)
         {
         }
