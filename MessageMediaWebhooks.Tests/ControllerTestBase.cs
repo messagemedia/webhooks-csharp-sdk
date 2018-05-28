@@ -43,6 +43,8 @@ namespace MessageMedia.Webhooks
             {
                 if (client == null)
                 {
+                    Configuration.BasicAuthUserName = Environment.GetEnvironmentVariable("MessageMediaApiTestsKey");
+                    Configuration.BasicAuthPassword = Environment.GetEnvironmentVariable("MessageMediaApiTestsSecret");
                     client = new MessageMediaWebhooksClient();
                 }
                 return client;

@@ -21,6 +21,6 @@
     </dependencies>
   </metadata>
   <files>
-    <file src="bin\Release\MessageMediaWebhooks.PCL.dll" target="lib\MessageMediaWebhooks.PCL.dll" />
+    <file src="bin\Release\MessageMediaWebhooks.dll" target="lib\MessageMediaWebhooks.dll" />
   </files>
 </package>

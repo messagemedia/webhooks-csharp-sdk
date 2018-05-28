@@ -2,11 +2,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.27130.2036
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MessageMediaWebhooks.PCL", "MessageMediaWebhooks.PCL\MessageMediaWebhooks.PCL.csproj", "{F9E95BDE-CC65-40B0-A972-523C6FC50530}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MessageMedia.SDK.Webhooks", "MessageMedia.SDK.Webhooks\MessageMedia.SDK.Webhooks.csproj", "{F9E95BDE-CC65-40B0-A972-523C6FC50530}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MessageMediaWebhooks.Tests", "MessageMediaWebhooks.Tests\MessageMediaWebhooks.Tests.csproj", "{6AAA8DC5-C408-403E-85EF-B6FD718F2E43}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestApp", "TestApp\TestApp.csproj", "{A0418035-6839-478C-8C2E-A85022550F8A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -22,10 +20,6 @@ Global
 		{6AAA8DC5-C408-403E-85EF-B6FD718F2E43}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6AAA8DC5-C408-403E-85EF-B6FD718F2E43}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6AAA8DC5-C408-403E-85EF-B6FD718F2E43}.Release|Any CPU.Build.0 = Release|Any CPU
-		{A0418035-6839-478C-8C2E-A85022550F8A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{A0418035-6839-478C-8C2E-A85022550F8A}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{A0418035-6839-478C-8C2E-A85022550F8A}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{A0418035-6839-478C-8C2E-A85022550F8A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

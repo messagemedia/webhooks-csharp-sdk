@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <!--
  - MessageMediaWebhooks.Tests
  -
@@ -8,10 +8,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{6aaa8dc5-c408-403e-85ef-b6fd718f2e43}</ProjectGuid>
+    <ProjectGuid>{6AAA8DC5-C408-403E-85EF-B6FD718F2E43}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>MessageMedia.Webhooks</RootNamespace>
+    <RootNamespace>MessageMedia.Tests.Webhooks</RootNamespace>
     <AssemblyName>MessageMediaWebhooks.Tests</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
@@ -59,7 +59,6 @@
       <HintPath>..\packages\NUnit.3.2.1\lib\net45\nunit.framework.dll</HintPath>
       <Private>True</Private>
     </Reference>
-
     <Reference Include="APIMATIC.SDK.Common">
       <HintPath>..\packages\APIMATIC.SDK.Common.2.1.1\lib\portable-net40+sl5+wp80+win8+wpa81\APIMATIC.SDK.Common.dll</HintPath>
     </Reference>
@@ -86,9 +85,9 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\MessageMediaWebhooks.PCL\MessageMediaWebhooks.PCL.csproj">
+    <ProjectReference Include="..\MessageMedia.SDK.Webhooks\MessageMedia.SDK.Webhooks.csproj">
       <Project>{f9e95bde-cc65-40b0-a972-523c6fc50530}</Project>
-      <Name>MessageMediaWebhooks.PCL</Name>
+      <Name>MessageMedia.SDK.Webhooks</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
