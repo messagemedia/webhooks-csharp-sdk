@@ -10,7 +10,7 @@
     <iconUrl>https://raw.githubusercontent.com/messagemedia/webhooks-csharp-sdk/master/mm-logo.png</iconUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <description>The MessageMedia Webhooks allows you to subscribe to one or several events and when one of those events is triggered, an HTTP request is sent to the URL of your choice along with the message or payload. In simpler terms, it allows applications to "speak" to one another and get notified automatically when something new happens.</description>
-    <summary>MessageMedia Webhooks SDK</summary>
+    <summary>The MessageMedia Webhooks allows you to subscribe to one or several events and when one of those events is triggered, an HTTP request is sent to the URL of your choice along with the message or payload. In simpler terms, it allows applications to "speak" to one another and get notified automatically when something new happens.</summary>
     <releaseNotes></releaseNotes>
     <copyright>Copyright 2018</copyright>
     <language>en-US</language>
@@ -20,7 +20,4 @@
         <dependency id="Newtonsoft.Json" version="10.0.3"/>
     </dependencies>
   </metadata>
-  <files>
-    <file src="bin\Release\MessageMediaWebhooks.dll" target="lib\MessageMediaWebhooks.dll" />
-  </files>
 </package>
