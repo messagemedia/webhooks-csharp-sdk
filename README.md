@@ -1,4 +1,4 @@
-# MessageMedia Webhooks NodeJS SDK
+# MessageMedia Webhooks C# SDK
 [![Travis Build Status](https://api.travis-ci.org/messagemedia/webhooks-csharp-sdk.svg?branch=master)](https://travis-ci.org/messagemedia/webhooks-csharp-sdk)
 [![NuGet version](https://badge.fury.io/nu/MessageMedia.SDK.Webhooks.svg)](https://badge.fury.io/nu/MessageMedia.SDK.Webhooks)
 
