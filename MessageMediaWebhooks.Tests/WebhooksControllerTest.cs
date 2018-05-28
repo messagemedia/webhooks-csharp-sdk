@@ -50,8 +50,8 @@ namespace MessageMedia.Webhooks
             catch (APIException) { };
 
             // Test response code
-            Assert.AreEqual(204, httpCallBackHandler.Response.StatusCode,
-                    "Status should be 204");
+            Assert.AreEqual(200, httpCallBackHandler.Response.StatusCode,
+                    "Status should be 200");
 
         }
 
