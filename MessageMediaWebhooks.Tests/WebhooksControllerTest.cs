@@ -60,9 +60,6 @@ namespace MessageMedia.Webhooks
             Assert.AreEqual(204, httpCallBackHandler.Response.StatusCode,
                     "Status should be 204");
 
-            Assert.AreEqual(
-                    headers.Count, httpCallBackHandler.Response.Headers().Count,
-                    "Headers count should match exactly");
         }
 
         /// <summary>
@@ -102,10 +99,6 @@ namespace MessageMedia.Webhooks
             // Test response code
             Assert.AreEqual(200, httpCallBackHandler.Response.StatusCode,
                     "Status should be 200");
-
-            Assert.AreEqual(
-                    headers.Count, httpCallBackHandler.Response.Headers().Count,
-                    "Headers count should match exactly");
         }
 
     }
