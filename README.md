@@ -15,7 +15,7 @@ Visual Studio Mac:
 Project -> Add NuGet Packages -> Search for 'MessageMedia'
 
 ## 🎬 Get Started
-It's easy to get started. Simply enter the API Key and secret you obtained from the [MessageMedia Developers Portal](https://developers.messagemedia.com) into the code snippet below and a mobile number you wish to send to.
+It's easy to get started. Simply enter the API Key and secret you obtained from the [MessageMedia Developers Portal](https://developers.messagemedia.com) into the code snippet below.
 
 ### 🚀 Create a webhook
 ```csharp
